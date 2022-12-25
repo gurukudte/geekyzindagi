@@ -3,12 +3,13 @@ import React from 'react';
 interface Props{
     todo: string; 
     setTodo: React.Dispatch<React.SetStateAction<string>>;
+    handleAdd:( e:React.FormEvent )=>void;
 }
 
-const InputField:React.FC<Props> = ({todo,setTodo}) => {
+const InputField:React.FC<Props> = ({todo,setTodo,handleAdd}) => {
     return (
         <div>
-            <form action="">
+            <form onSubmit={handleAdd}>
                 <input 
                     type="input" 
                     value={todo}
@@ -21,4 +22,4 @@ const InputField:React.FC<Props> = ({todo,setTodo}) => {
     )
 }
 
-export default InputField
+export default InputField;
