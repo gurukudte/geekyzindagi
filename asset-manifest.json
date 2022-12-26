@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/geekyzindagi/static/js/main.0d0d9f83.js",
+    "main.css": "/geekyzindagi/static/css/main.a63e1a3d.css",
+    "main.js": "/geekyzindagi/static/js/main.7c8efe20.js",
     "index.html": "/geekyzindagi/index.html",
-    "main.0d0d9f83.js.map": "/geekyzindagi/static/js/main.0d0d9f83.js.map"
+    "main.a63e1a3d.css.map": "/geekyzindagi/static/css/main.a63e1a3d.css.map",
+    "main.7c8efe20.js.map": "/geekyzindagi/static/js/main.7c8efe20.js.map"
   },
   "entrypoints": [
-    "static/js/main.0d0d9f83.js"
+    "static/css/main.a63e1a3d.css",
+    "static/js/main.7c8efe20.js"
   ]
 }
