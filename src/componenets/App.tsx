@@ -1,10 +1,10 @@
-import React from 'react';
-import Header from './Header';
+import Header from "./Header";
+import './app.css';
 
 function App() {
   return (
     <>
-    <div>
+    <div className='app'>
       <Header/>
     </div>
     </>
@@ -12,3 +12,4 @@ function App() {
 }
 
 export default App;
+
