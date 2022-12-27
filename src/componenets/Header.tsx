@@ -4,10 +4,8 @@ import styled from 'styled-components';
 const Header = () => {
   return (
     <HeaderWrapper>
-        <a>
-        <img src="https://raw.githubusercontent.com/gurukudte/geekyzindagi/main/src/componenets/logo.png" alt="" />
-        </a>
-
+      <a><img src="https://raw.githubusercontent.com/gurukudte/geekyzindagi/main/src/images/logo.png" alt="logo" /></a>
+      <button>Login</button>
     </HeaderWrapper>
   )
 }
@@ -15,13 +13,33 @@ const Header = () => {
 export default Header;
 
 const HeaderWrapper = styled.header`
-  height:4em;
-  background-color:blue;
+    height: 4em;
+    background-color: #0A2647;
+    padding-inline: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
   a{
-    width:100%;
     height:100%;
     display:flex;
     align-items:center;
-    padding-left:2em;
+    img{
+      height:2.5em;
+    }
+  }
+  button{
+    background-color:#144272;
+    border-radius:0.5em;
+    height:2.5rem;
+    width:5rem;
+    color:white;
+    font-weight:600;
+    border:none;
+
+    &:hover{
+      background-color:#2C74B3;
+      cursor:pointer;
+    }
   }
 `;
