@@ -4,7 +4,6 @@
 // }
 
 export default interface UserRegister {
-    id:Number;
     username:string;
     password:string;
 }

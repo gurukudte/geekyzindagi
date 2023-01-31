@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styled from "styled-components";
 import UserRegister from "../../modal";
 import createUser from "./RegisterApi";
 
@@ -21,11 +22,11 @@ const Register: React.FC<Props> = ({
     if (UsernameReg && passwordReg) {
       setRegisterUser([
         ...UserRegister,
-        { id: Date.now(), username: UsernameReg, password: passwordReg },
+        { username: UsernameReg, password: passwordReg },
       ]);
       setUsernameReg("");
       setpasswordReg("");
-      createUser(Date.now(), UsernameReg, passwordReg);
+      createUser(UsernameReg, passwordReg);
     } else {
       if (!UsernameReg) {
         console.log("Enter Username");
@@ -37,8 +38,9 @@ const Register: React.FC<Props> = ({
   };
 
   return (
-    <div>
-      <form onSubmit={HandleRegister}>
+    <SignUp>
+      <Form onSubmit={HandleRegister}>
+        <span>Sign Up</span>
         <label htmlFor="Email">Email</label>
         <input
           type="email"
@@ -54,9 +56,46 @@ const Register: React.FC<Props> = ({
           onChange={(e) => setpasswordReg(e.target.value)}
         />
         <button type="submit">Register</button>
-      </form>
-    </div>
+      </Form>
+      <ImageWrapper>
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+          alt="signup"
+        />
+      </ImageWrapper>
+    </SignUp>
   );
 };
 
 export default Register;
+
+const SignUp = styled.div`
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  height: 28rem;
+  width: 60rem;
+  border-radius: 1.5rem;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  padding: 1rem;
+
+  span {
+    color: white;
+  }
+
+  button {
+  }
+`;
+
+const ImageWrapper = styled.div`
+  img {
+    height: 20rem;
+    width: 20rem;
+  }
+`;

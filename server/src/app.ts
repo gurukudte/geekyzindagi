@@ -1,17 +1,22 @@
 import express from "express";
-import { Request, Response } from "express";
+import helmet from "helmet";
 import cors from 'cors';
+import config  from "config";
 import connect from "./utils/connect";
 import routes from "./utils/routes";
-import mongoose from "mongoose";
 
 const app = express();
 app.use(cors())
+app.use(express.json())
+app.use(helmet());
 
-app.listen(1337, async () => {
-  console.log(`server RUNNING @http://localhost:1337`);
+const port = config.get<number>('port');
+
+app.listen(port, async () => {
+  console.log(`Server RUNNING @http://localhost:${port}`);
   routes(app)
-  // await connect();
+  // fetchData(); 
+  await connect(); 
   
 });
 

@@ -1,18 +1,17 @@
 import axios from "axios";
 
 type CreateUserResponse = {
-  id: number;
   email: string;
   password: string;
 };
 
-async function createUser(id: number, email: string, password: string) {
+async function createUser(email: string, password: string) {
   try {
-    console.log("from createUser");
+    console.log("from createUser API");
 
     const { data } = await axios.post<CreateUserResponse>(
-      "http://localhost:3001/register",
-      { id: id, email: email, password: password },
+      "http://localhost:1337/register",
+      {email: email, password: password },
       {
         headers: {
           "Content-Type": "application/json",
