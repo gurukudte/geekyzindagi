@@ -4,7 +4,7 @@
 
 // // Connection URI
 // const uri =
-//   "mongodb+srv://gurukudte:gk111257@geekyzindagi.2qu3wna.mongodb.net/?retryWrites=true&w=majority";
+//   
 
 // async function fetchData() {
 //   const client = new MongoClient(uri);
