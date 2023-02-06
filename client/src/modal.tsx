@@ -4,6 +4,8 @@
 // }
 
 export default interface UserRegister {
-    username:string;
-    password:string;
+  username: string;
+  password: string;
+  fistName: string;
+  lastName: string;
 }

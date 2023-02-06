@@ -1,6 +1,4 @@
 import { Express, Request, Response, } from "express";
-import UserModel from "../models/user.model";
-// import { InsertData } from "./connect";
 
 export default function routes(app:Express){
 
@@ -8,14 +6,8 @@ export default function routes(app:Express){
 
     app.get('/',(req:Request,res:Response)=>{res.send("Server is connected to you")});
    
-    app.get('/register',(req:Request,res:Response)=>{res.send("Register page READY")});
-
-    // app.post('/register',(req:Request,res:Response)=>{
-    //    console.log(req.body)
-    //    res.send(req.body.email)
-    //    InsertData(req.body.email,req.body.password)
-    // //    
-    // });
+    app.get('/register',(req:Request,res:Response)=>{res.send("Rescieved from server")});
+    app.post('/register',(req:Request,res:Response)=>{res.send(req.body)});
 }
 
 

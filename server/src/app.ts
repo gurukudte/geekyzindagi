@@ -15,8 +15,7 @@ const port = config.get<number>('port');
 app.listen(port, async () => {
   console.log(`Server RUNNING @http://localhost:${port}`);
   routes(app)
-  // fetchData(); 
-  await connect(); 
+  // await connect(); 
   
 });
 
