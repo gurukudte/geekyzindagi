@@ -3,8 +3,7 @@
 // import UserModel from "../models/user.model";
 
 // // Connection URI
-// const uri =
-//   "mongodb+srv://gurukudte:gk111257@geekyzindagi.2qu3wna.mongodb.net/?retryWrites=true&w=majority";
+// const uri ='' //enter your connection string
 
 // async function fetchData() {
 //   const client = new MongoClient(uri);
