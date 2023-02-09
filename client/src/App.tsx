@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Register from "./components/Register/Register";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./components/Home/Home";
-import Login from "./components/Login/Login";
+import { Home, Login, Register } from "./components";
 
 const App: React.FC = () => {
   return (
@@ -20,7 +18,10 @@ const App: React.FC = () => {
 export default App;
 
 const AppWrapper = styled.div`
-  margin: 0;
-  padding: 0;
-  background-color: #eee;
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior:smooth;
+  }
 `;
