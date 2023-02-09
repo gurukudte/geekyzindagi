@@ -1,11 +1,9 @@
-// export default interface UserLogin {
-//     username:string;
-//     password:string;
-// }
-
 export default interface UserRegister {
-  username: string;
+  email: string;
   password: string;
   fistName: string;
   lastName: string;
 }
+
+
+

@@ -1,10 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-html{
-  margin: 0;
-    padding: 0;
-}
+const GlobalCSS = createGlobalStyle`
   *{
     
     font-family: Open-Sans, 'Roboto', Sans-Serif;
@@ -14,8 +10,9 @@ html{
   body {
     margin:0;
     padding:0;
+    height: 100vh;
+    background-color: #eee;
   }
 `;
 
-export default GlobalStyle;
-export {};
+export default GlobalCSS;

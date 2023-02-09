@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import GlobalStyle from "../src/globalStyle";
+import GlobalCSS from "./components/styled/globalStyle";
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyle />
+      <GlobalCSS />
       <App />
     </BrowserRouter>
   </React.StrictMode>

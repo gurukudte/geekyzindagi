@@ -1,4 +1,5 @@
 import axios from "axios";
+import UserRegister from "../../modal";
 
 type CreateUserResponse = {
   email: string;
@@ -7,13 +8,18 @@ type CreateUserResponse = {
   lastName: string;
 };
 
-async function createUser(email: string, password: string ,firstName:string,lastName:string) {
+async function createUser(user: UserRegister) {
   try {
     console.log("from createUser API");
 
     const { data } = await axios.post<CreateUserResponse>(
       "http://localhost:1337/register",
-      {email: email, password: password , firstName:firstName, lastName:lastName },
+      {
+        email: user.email,
+        password: user.password,
+        firstName: user.fistName,
+        lastName: user.lastName,
+      },
       {
         headers: {
           "Content-Type": "application/json",
