@@ -1,21 +1,22 @@
-import express from "express";
+import express, { Router } from "express";
 import helmet from "helmet";
 import cors from 'cors';
 import config  from "config";
 import connect from "./utils/connect";
-import routes from "./utils/routes";
+import router from './routes/index'
 
 const app = express();
-app.use(cors())
-app.use(express.json())
+
 app.use(helmet());
+app.use(cors());
+app.use(express.json());
+app.use(router);
 
 const port = config.get<number>('port');
 
 app.listen(port, async () => {
   console.log(`Server RUNNING @http://localhost:${port}`);
-  routes(app)
-  // await connect(); 
-  
+  await connect();  
 });
+
 

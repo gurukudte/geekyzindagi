@@ -1,27 +1,19 @@
 import React from "react";
-import styled from "styled-components";
 import { Routes, Route } from "react-router-dom";
-import { Home, Login, Register } from "./components";
+import { Home, Login, Register , Dashboard } from "./components";
 
+// App Element
 const App: React.FC = () => {
   return (
-    <AppWrapper className="App">
+    <div className="App">
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="register" element={<Register />}></Route>
+        <Route path="dashboard" element={<Dashboard />}></Route>
       </Routes>
-    </AppWrapper>
+    </div>
   );
 };
 
 export default App;
-
-const AppWrapper = styled.div`
-  *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    scroll-behavior:smooth;
-  }
-`;

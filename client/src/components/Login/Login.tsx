@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import LoginUser from "./LoginAPI";
 
 interface UserLogin {
   email: string;
@@ -21,17 +22,31 @@ const Login: React.FC = () => {
     };
   };
 
+  const HandleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (user.email && user.password) {
+      console.log(user);
+      LoginUser(user);
+      //fuctions
+    } else {
+      if (!user.email) {
+        console.log("Enter Username");
+      }
+      if (!user.password) {
+        console.log("Enter Password");
+      }
+    }
+  };
+
   return (
     <Formwrapper>
       <div className="about"></div>
-      <div className="form">
+      <form className="form" onSubmit={HandleLogin}>
         <div className="logo">
           <a href="/login">gZ</a>
         </div>
         <div className="welcome">Hello Again</div>
-        {/* <div className="discription">
-
-                </div> */}
         <label htmlFor="email">
           <input
             type="email"
@@ -48,8 +63,8 @@ const Login: React.FC = () => {
             onChange={handleInputChange("password")}
           />
         </label>
-        <button type="submit"></button>
-      </div>
+        <button type="submit">Login</button>
+      </form>
     </Formwrapper>
   );
 };
@@ -105,6 +120,7 @@ const Formwrapper = styled.div`
         padding: 0.5rem;
         font-size: 1rem;
         background-color: #313131;
+        color:white;
       }
     }
   }
