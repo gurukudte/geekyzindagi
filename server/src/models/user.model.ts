@@ -6,14 +6,12 @@ import {
   pre,
   DocumentType,
 } from "@typegoose/typegoose";
-const nanoid = import('nanoid')
 import argon2 from "argon2";
 
 @pre<User>("save", async function () {
   if (!this.isDirectModified("password")) {
     return;
   }
-
   const hash = await argon2.hash(this.password);
   this.password = hash;
 })
@@ -25,6 +23,7 @@ import argon2 from "argon2";
     allowMixed: Severity.ALLOW,
   },
 })
+  
 export class User {
   @prop({ lowercase: true, required: true, unique: true })
   email: string;
@@ -38,13 +37,14 @@ export class User {
   @prop({ required: true })
   password: string;
 
-  @prop({
-    required: true,
-    default: () => {
-      nanoid;
-    },
-  })
-  verficationCode: string;
+  
+  // @prop({
+  //   required: true,
+  //   default: () => {
+  //     nanoid;
+  //   },
+  // })
+  // verficationCode: string;
 
   @prop()
   passwordResetCode: string | null;

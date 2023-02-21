@@ -5,6 +5,6 @@ import { createUserSchema } from '../schema/user.schema';
 
 const router = express.Router();
 
-router.post('/api/users', validateResource(createUserSchema))
+router.post('/api/user', validateResource(createUserSchema),createUserHandler)
 
 export default router;

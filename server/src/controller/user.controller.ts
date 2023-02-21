@@ -10,6 +10,7 @@ export async function createUserHandler(
 
   try {
     const user = await createUser(body);
+    console.log(user)
     return res.send("User Successfully created");
   } catch (e: any) {
     if (e.code === 11000) {

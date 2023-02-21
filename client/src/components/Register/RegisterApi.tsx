@@ -13,10 +13,11 @@ async function createUser(user: UserRegister) {
     console.log("from createUser API");
 
     const { data } = await axios.post<CreateUserResponse>(
-      "http://localhost:1337/register",
+      "http://localhost:1337/api/user",
       {
         email: user.email,
         password: user.password,
+        passwordConfirmation: user.password,
         firstName: user.fistName,
         lastName: user.lastName,
       },
