@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const Logo = require("../../../assents/logo.png");
+const Logo = require("../../../assets/logo.png");
 
 const NavBar: React.FC = () => {  
 
